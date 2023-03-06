@@ -1,8 +1,0 @@
-[Unit]
-Description=Xamount BIOS and BMC Update Script
-
-[Service]
-Type=simple
-RemainAfterExit=no
-WorkingDirectory=/opt/services
-ExecStart=/bin/bash -c "./xamount-bios-bmc.sh"

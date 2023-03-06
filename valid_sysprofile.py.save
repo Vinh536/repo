@@ -1,0 +1,10 @@
+#!/usr/bin/python3
+import requests
+import json
+
+""" 
+   Scan Redfish to quickly get the Job ID from the target system.
+   racadm is far too slow...
+"""
+def get_job_id(idrac_ip, idrac_username, idrac_password):
+    

@@ -1,0 +1,5 @@
+[Unit]
+Description="Ezfio Disk Test (does it work for NOT NVMe drives? I don't know!)"
+
+[Service]
+ExecStart=/bin/bash -c "/root/ezfio_test.sh"

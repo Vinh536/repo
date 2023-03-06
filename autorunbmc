@@ -1,0 +1,11 @@
+#!/bin/bash
+if [ -z "$1" ];
+then
+	echo "1: bmc ip file, 2: user, 3: password, 4: ipmitool command"
+else
+	for i in $(cat $1);
+	do
+#		echo $i;
+		ipmitool -I lanplus -H $i -U $2 -P $3 $4 ;
+	done
+fi

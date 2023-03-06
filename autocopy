@@ -1,0 +1,25 @@
+#!/bin/bash
+if [ -z "$1" ];
+then
+	echo "1: ip file, 2: username, 3: password, 4: file to be copied"
+else if [ -z "$2" ];
+then
+	echo "using last settings"
+	file=$(cat /home/michael/bin/auto.config | awk '{print $1}')
+	username=$(cat /home/michael/bin/auto.config | awk '{print $2}')
+	password=$(cat /home/michael/bin/auto.config | awk '{print $3}')
+	copyfile=$1
+else
+	echo "$(pwd)/$1 $2 $3" > /home/michael/bin/auto.config
+	echo "settings saved to auto.config"
+	file=$1
+	username=$2
+	password=$3
+	copyfile=$4
+fi
+	for i in $( cat $file ); 
+	do 
+		echo $i;
+		sshpass -p $password scp -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null $copyfile $username@$i:&
+	done
+fi

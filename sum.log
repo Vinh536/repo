@@ -1,0 +1,3 @@
+2022-01-19_16:09:26    vinh    ./sum -h  -c ChangeBiosCfg
+2022-01-19_16:10:10    vinh    ./sum -u ***** -p ***** -l 33-iplist -c ChangeBiosCfg --file cerebras_supermicro.xml --reboot 
+2022-01-19_16:22:14    vinh    ./sum -h  -c ChangeBiosCfg
